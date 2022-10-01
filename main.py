@@ -21,8 +21,14 @@ for i in range(0, total_duration):
         audio = r.record(source, offset=i * 60, duration=60)
     f = open("transcription.txt", "a")
 
-    #f.write(r.recognize_google(audio, language="en-US", show_all=True))
-    print (r.recognize_google(audio, language="en-US"))
+    try:
+        output = r.recognize_google(audio, language="en-US")
+        f.write(output)
+        print(output)
+
+    except sr.UnknownValueError:
+        f.write("Google Speech Recognition could not understand audio")
+
     f.write(" ")
 
 f.close()
