@@ -26,4 +26,4 @@ def transcribe_model_selection_gcs(gcs_uri, model):
         print(u"Transcript: {}".format(alternative.transcript))
 
 
-transcribe_model_selection_gcs("gs://bucket_video_ibrahim/Testing_video/Marshmello.mp4", "video")
+transcribe_model_selection_gcs("gs://bucket_video_ibrahim//Testing_video//Marshmello.mp4", "video")
