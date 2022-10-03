@@ -34,6 +34,7 @@ class videoconverter:
                         or file.endswith(".f4v") or file.endswith(".flv") \
                         or file.endswith(".f4p") or file.endswith(".f4a") \
                         or file.endswith(".f4b"):
+
                     video_paths.append(given_path + "\\" + file)
         else:
             break
