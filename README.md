@@ -1,2 +1,4 @@
-# Video-to-text-using-google-cloud
+# Video-converter-GUI
+
+build on QT6
 
