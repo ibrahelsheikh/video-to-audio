@@ -12,8 +12,8 @@ class App(QWidget):
     def __init__(self):
         super().__init__()
         self.title = 'Video Converter'
-        self.left = 10
-        self.top = 10
+        self.left = 40
+        self.top = 40
         self.width = 640
         self.height = 480
         self.initUI()
@@ -22,10 +22,8 @@ class App(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        # Create widget
-        self.label = QLabel(self)
-        self.label.move(20, 20)
-        self.label.resize(600, 400)
+        # fixed size
+        self.setFixedSize(640, 480)
 
         # Create a button in the window
         self.button = QPushButton('Open Video', self)
@@ -37,15 +35,10 @@ class App(QWidget):
         self.button.move(120, 440)
         self.button.clicked.connect(self.convert)
 
-
         # create text box
         self.textbox = QLineEdit(self)
         self.textbox.move(20, 480)
         self.textbox.resize(280, 40)
-
-        # create progress bar
-        self.progress = QProgressBar(self)
-        self.progress.setGeometry(200, 80, 250, 20)
 
         self.show()
 
@@ -81,10 +74,6 @@ class App(QWidget):
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
-
-
-# create dark theme for GUI
-
 
 
 # call app
