@@ -22,8 +22,6 @@ class App(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-
-
         # Create widget
         self.label = QLabel(self)
         self.label.move(20, 20)
@@ -38,6 +36,8 @@ class App(QWidget):
         self.button = QPushButton('Convert', self)
         self.button.move(120, 440)
         self.button.clicked.connect(self.convert)
+
+
         # create text box
         self.textbox = QLineEdit(self)
         self.textbox.move(20, 480)
@@ -47,9 +47,10 @@ class App(QWidget):
         self.progress = QProgressBar(self)
         self.progress.setGeometry(200, 80, 250, 20)
 
-
-
         self.show()
+
+    def pri(self):
+        pass
 
     # create convert function
     def convert(self):
@@ -83,6 +84,7 @@ class App(QWidget):
 
 
 # create dark theme for GUI
+
 
 
 # call app

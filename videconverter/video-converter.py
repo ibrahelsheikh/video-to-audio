@@ -6,6 +6,9 @@
 import os
 import pathlib
 
+
+
+
 # convert video to .wav file by cmd
 class videoconverter:
 
@@ -63,7 +66,13 @@ class videoconverter:
                 aduio_path = os.path.join(dir_path, file_name + ".wav")
                 print(aduio_path)
 
-                os.system(f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")
+                # Insert Local Video File Path
+                clip = mp.VideoFileClip(r"Video File")
+
+                # Insert Local Audio File Path
+                clip.audio.write_audiofile(r"Audio File")
+
+                os.system(f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")    # TODO: you can use ffmpeg or moviepy
                 print("Done")
             else:
                 print("audio file already exists")
