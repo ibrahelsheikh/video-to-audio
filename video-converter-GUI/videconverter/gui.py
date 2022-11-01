@@ -38,9 +38,7 @@ class App(QWidget):
         self.button.move(220, 440)
         self.button.clicked.connect(self.convert)
 
-
         self.show()
-
 
     # create convert function
     def convert(self):
@@ -61,7 +59,7 @@ class App(QWidget):
         self.label.setText(folder_name)
 
     # initilize int postion of the window
-    def center(self) :                                   #TODO: center window
+    def center(self):  # TODO: center window
         pass
 
 

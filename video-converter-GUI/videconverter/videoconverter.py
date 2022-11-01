@@ -7,8 +7,6 @@ import os
 import pathlib
 
 
-
-
 # convert video to .wav file by cmd
 class videoconverter:
 
@@ -36,7 +34,6 @@ class videoconverter:
                         or file.endswith(".f4v") or file.endswith(".flv") \
                         or file.endswith(".f4p") or file.endswith(".f4a") \
                         or file.endswith(".f4b"):
-
                     video_paths.append(given_path + "\\" + file)
         else:
             break
@@ -72,7 +69,8 @@ class videoconverter:
                 # Insert Local Audio File Path
                 clip.audio.write_audiofile(r"Audio File")
 
-                os.system(f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")    # TODO: you can use ffmpeg or moviepy
+                os.system(
+                    f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")  # TODO: you can use ffmpeg or moviepy
                 print("Done")
             else:
                 print("audio file already exists")
@@ -89,5 +87,3 @@ class videoconverter:
 
 # test
 videoconverter.convert("")
-
-
