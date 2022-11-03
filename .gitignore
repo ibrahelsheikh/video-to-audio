@@ -1,4 +1,5 @@
-../.idea
+.idea
 keys
 get_file_name.py
-
+venv
+.\video-converter-GUI\programs\ffmpeg
