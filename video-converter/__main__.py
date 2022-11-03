@@ -1,7 +1,7 @@
 import ffmpegsetup
-import videoconverter
+import VideoConverter
 
 if __name__ == '__main__':
     ffmpegsetup.setup()
-    videoconverter.main()
+    VideoConverter.main()
 
