@@ -3,6 +3,7 @@
 import os
 import zipfile
 
+global ffmpegsetup
 
 def unzip_file(zip_file, unzip_dir):
     if not os.path.exists(os.path.abspath(os.getcwd()) + '\\ffmpeg'):
