@@ -1,15 +1,21 @@
 # unzip file
 
-import os
-import zipfile
+from os import makedirs
+from pathlib import Path
+from shutil import rmtree
+from zipfile import ZipFile
 
 
-def unzip_file(zip_file, unzip_dir):
-    if not os.path.exists(os.path.abspath(os.getcwd()) + '\\ffmpeg'):
-        if not os.path.exists(unzip_dir):
-            os.makedirs(unzip_dir)
-        with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-            zip_ref.extractall(unzip_dir)
+def unzip_file(zip_filepath: Path, unzip_dir: Path):
+    if unzip_dir.exists():
+        rmtree(unzip_dir)
+    else:
+        makedirs(unzip_dir)
+        
+    with ZipFile(zip_filepath, 'r') as zip_file:
+        zip_file.extractall(unzip_dir)
 
 def unzip_ffmpeg():
-    unzip_file('ffmpeg.zip', os.path.abspath(os.getcwd()))
+    ffmpeg_zip_filepath = Path(__file__).parent / "ffmpeg.zip"
+    unzip_dir = Path(__file__).parent / "ffmpeg"
+    unzip_file(ffmpeg_zip_filepath, unzip_dir)
