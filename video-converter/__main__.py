@@ -6,8 +6,3 @@
 #     VideoConverter.main
 
 
-
-from Programs import ffmpeg
-
-#run ffmpeg module
-ffmpeg.unzip()

@@ -11,5 +11,5 @@ def unzip_file(zip_file, unzip_dir):
         with zipfile.ZipFile(zip_file, 'r') as zip_ref:
             zip_ref.extractall(unzip_dir)
 
-
-unzip_file('ffmpeg.zip', os.path.abspath(os.getcwd()))
+def unzip_ffmpeg():
+    ffmpeg.unzip_file('ffmpeg.zip', os.path.abspath(os.getcwd()))

@@ -53,12 +53,6 @@ class App(QWidget):
         self.setFont(QFont("Sanserif"))
         self.label.setStyleSheet('color:red')
 
-        #label.setText(str(12))
-        #label.setNum(15)
-        #label.clear()
-
-
-
 
 
         self.show()
