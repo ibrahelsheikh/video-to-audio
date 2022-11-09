@@ -12,4 +12,4 @@ def unzip_file(zip_file, unzip_dir):
             zip_ref.extractall(unzip_dir)
 
 def unzip_ffmpeg():
-    ffmpeg.unzip_file('ffmpeg.zip', os.path.abspath(os.getcwd()))
+    unzip_file('ffmpeg.zip', os.path.abspath(os.getcwd()))
