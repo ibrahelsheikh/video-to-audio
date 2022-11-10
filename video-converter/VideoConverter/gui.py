@@ -49,7 +49,7 @@ class App(QWidget):
 
         self.label = QLabel("Starting .........", self)
         # self.label.setText("New Text is Here")
-        self.label.move(25, 80 )
+        self.label.move(25, 80)
         self.setFont(QFont("Sanserif"))
         self.label.setStyleSheet('color:red')
 
@@ -58,7 +58,6 @@ class App(QWidget):
     # create convert function
 
     def convert(self):
-
         pass
 
     def on_click(self):
