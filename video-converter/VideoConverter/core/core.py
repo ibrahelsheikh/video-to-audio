@@ -1,7 +1,7 @@
 # created by ibrahim el-sheikh
 # 2022-10-1
 # tested on python 3.9.7
-# sussfully tested on windows 11
+# successfully tested on windows 11
 
 import os
 import pathlib
@@ -13,7 +13,7 @@ class videoconverter:
     def __init__(self):
         pass
 
-    # create list to store all videos in given dirictory if given path is dirictory
+    # create list to store all videos in given directory if given path is directory
     def get_videos_paths(given_path):
         video_paths = []
         if os.path.isdir(given_path):
@@ -35,13 +35,12 @@ class videoconverter:
                         or file.endswith(".f4p") or file.endswith(".f4a") \
                         or file.endswith(".f4b"):
                     video_paths.append(given_path + "\\" + file)
-        else:
-            break
+
         return video_paths
 
     # convert single video to .wav file
     def video_to_wav(video_path):
-        # create output dirictory
+        # create output directory
 
         # get video name without extension
         file_name = pathlib.Path(video_path).stem
@@ -49,25 +48,19 @@ class videoconverter:
         # get video directory
         dir_path = os.path.dirname(video_path)
 
-        # aduio path
-        aduio_path = dir_path + "\\" + file_name + ".wav"
+        # audio path
+        audio_path = dir_path + "\\" + file_name + ".wav"
 
         # check if video exists
         if os.path.exists(video_path):
 
-            # check if aduio file exists
-            if os.path.exists(aduio_path) == False:
+            # check if audio file exists
+            if os.path.exists(audio_path) == False:
                 print("video found")
                 # convert video to .wav file
 
-                aduio_path = os.path.join(dir_path, file_name + ".wav")
-                print(aduio_path)
-
-                # Insert Local Video File Path
-                clip = mp.VideoFileClip(r"Video File")
-
-                # Insert Local Audio File Path
-                clip.audio.write_audiofile(r"Audio File")
+                audio_path = os.path.join(dir_path, file_name + ".wav")
+                print(audio_path)
 
                 os.system(
                     f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")  # TODO: you can use ffmpeg or moviepy
@@ -77,13 +70,9 @@ class videoconverter:
         else:
             print("video not found")
 
-    # Convert all videos in given dirictory to .wav files
+    # Convert all videos in given directory to .wav files
     def convert(given_path):
 
         # send videos paths to video_to_wav function
         for video_path in videoconverter.get_videos_paths(given_path):
             videoconverter.video_to_wav(video_path)
-
-
-# test
-videoconverter.convert("")
