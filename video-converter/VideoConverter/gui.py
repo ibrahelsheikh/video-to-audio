@@ -47,18 +47,15 @@ class App(QWidget):
 
         # create labal
 
-        self.label = QLabel("Python GUI Development - Geekscoders.com", self)
-        #self.label.setText("New Text is Here")
-        self.label.move(20,100)
+        self.label = QLabel("Starting .........", self)
+        # self.label.setText("New Text is Here")
+        self.label.move(25, 80 )
         self.setFont(QFont("Sanserif"))
         self.label.setStyleSheet('color:red')
-
-
 
         self.show()
 
     # create convert function
-
 
     def convert(self):
 
@@ -101,5 +98,4 @@ if __name__ == "__main__":
 # TODO : ren all project by cmd
 # TODO : add a label to show all process
 
-#TODO : clear textbox
-
+# TODO : clear textbox

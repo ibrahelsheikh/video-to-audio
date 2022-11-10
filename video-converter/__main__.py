@@ -1,7 +1,9 @@
-from PyQt5.QtWidgets import QApplication,QLineEdit,QWidget,QFormLayout
-from PyQt5.QtGui import QIntValidator,QDoubleValidator,QFont
-from PyQt5.QtCore import Qt
 import sys
+
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIntValidator, QDoubleValidator, QFont
+from PyQt5.QtWidgets import QApplication, QLineEdit, QWidget, QFormLayout
+
 
 class lineEditDemo(QWidget):
         def __init__(self,parent=None):
