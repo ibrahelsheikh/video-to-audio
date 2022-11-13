@@ -1,5 +1,6 @@
 # create simple GUI for vide converter BUILDING on QT6
 
+from VideoConverter.core import core
 import sys
 
 from PyQt6.QtGui import QPixmap, QFont
