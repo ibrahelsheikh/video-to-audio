@@ -6,8 +6,7 @@ import sys
 from PyQt6.QtGui import QPixmap, QFont
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLineEdit, QLabel
 
-global process
-
+global progress_show
 
 class App(QWidget):
     def __init__(self):
@@ -95,7 +94,7 @@ if __name__ == "__main__":
 
 # TODO : build function to get path from textbox
 
-# TODO : ren all project by cmd
+# TODO : run all project by cmd
 # TODO : add a label to show all process
 
 # TODO : clear textbox

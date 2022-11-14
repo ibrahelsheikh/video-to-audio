@@ -7,7 +7,7 @@ import os
 import pathlib
 
 
-# convert video to .wav file by cmd
+# convert video to .wav file by using ffmpeg
 class videoconverter:
 
     def __init__(self):
@@ -73,6 +73,10 @@ class videoconverter:
     # Convert all videos in given directory to .wav files
     def convert(given_path):
 
-        # send videos paths to video_to_wav function
-        for video_path in videoconverter.get_videos_paths(given_path):
-            videoconverter.video_to_wav(video_path)
+        if os.path.isdir(given_path):
+            video_paths = videoconverter.get_videos_paths(given_path)
+            for video_path in video_paths:
+                videoconverter.video_to_wav(video_path)
+
+        else:
+            videoconverter.video_to_wav(given_path)
