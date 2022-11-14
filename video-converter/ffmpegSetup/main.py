@@ -1,8 +1,7 @@
 from Programs import ffmpeg
-import os
-import pathlib
 
 ffmpeg.unzip_ffmpeg()
 
-# add ffmpeg to path
-os.environ['PATH'] += os.pathsep + str(pathlib.Path(__file__).parent / "Programs" / "ffmpeg" / "bin")
+def get_ffmpeg_path():
+    return  ffmpeg.get_ffmpeg_path()
+
