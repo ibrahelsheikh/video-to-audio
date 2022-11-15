@@ -104,4 +104,3 @@ class videoconverter:
         #     videoconverter.video_to_wav(given_path)
 
 
-videoconverter.convert("D:\music\فرق   خبره.mp4")

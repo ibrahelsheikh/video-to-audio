@@ -7,6 +7,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLi
 
 global progress_show
 
+
 class App(QWidget):
     def __init__(self):
         super().__init__()
@@ -75,6 +76,7 @@ class App(QWidget):
 
     # initialize int position of the window
     def center(self):  # TODO: center window
+
         pass
 
 
