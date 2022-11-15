@@ -1,8 +1,6 @@
 # unzip file
 
-from os import makedirs
 from pathlib import Path
-from shutil import rmtree
 from zipfile import ZipFile
 
 

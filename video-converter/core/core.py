@@ -64,7 +64,7 @@ class videoconverter:
                 print(audio_path)
 
                 os.system(
-                    f"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav\"")  # TODO: you can use ffmpeg or moviepy
+                    f"\"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav \"")  # TODO: you can use ffmpeg or moviepy
                 print("Done")
             else:
                 print("audio file already exists")
@@ -76,6 +76,7 @@ class videoconverter:
         if os.path.exists(dst) == False:
             os.mkdir(dst)
 
+        # check if source
         for item in os.listdir(src):
             if os.path.exists(item) == False and item.endswith(
                     ".wav" or ".mp3" or ".m4a" or ".flac" or ".aac" or ".ogg" or ".wma" or ".aiff" or ".alac" or ".amr" or ".ape" or ".au" or ".dct" or ".dss" or ".dvf" or ".flac" or ".gsm" or ".iklax" or ".ivs" or ".m4a" or ".m4b" or ".m4p" or ".mmf" or ".mp3" or ".mpc" or ".msv" or ".nmf" or ".nsf" or ".ogg" or ".oga" or ".mogg" or ".opus" or ".ra" or ".rm" or ".raw" or ".rf64" or ".sln" or ".tta" or ".vox" or ".wav" or ".wma" or ".wv" or ".webm" or ".8svx" or ".cda" or ".mid" or ".midi" or ".rmi" or ".kar" or ".mka" or ".aif" or ".aifc" or ".aiff" or ".m3u" or ".wpl" or ".asx" or ".pls" or ".xspf" or ".m3u" or ".wpl" or ".asx" or ".pls" or ".xspf" or ".mp4" or ".m4v" or ".avi" or ".mov" or ".flv" or ".wmv" or ".mpg" or ".mpeg" or ".3gp" or ".webm" or ".vob" or ".m4v" or ".rmvb" or ".rm" or ".asf" or ".swf" or ".m2ts" or ".mts" or ".ts" or ".ogv" or ".ogg" or ".mxf" or ".dv" or ".dvr-ms" or ".amv" or ".qt" or ".f4v" or ".flv" or ".f4p" or ".f4a" or ".f4b"):
@@ -94,13 +95,13 @@ class videoconverter:
         # copy all audio files to output directory
         videoconverter.copytree_audio(given_path)
 
-        if pathlib.Path(given_path).is_file() == False:
-            video_paths = videoconverter.get_videos_paths(given_path)
-            for video_path in video_paths:
-                videoconverter.video_to_wav(video_path)
+        # if pathlib.Path(given_path).is_file() == False:
+        #     video_paths = videoconverter.get_videos_paths(given_path)
+        #     for video_path in video_paths:
+        #         videoconverter.video_to_wav(video_path)
+        #
+        # else:
+        #     videoconverter.video_to_wav(given_path)
 
-        else:
-            videoconverter.video_to_wav(given_path)
 
-
-videoconverter.convert("D:\music")
+videoconverter.convert("D:\music\فرق   خبره.mp4")
