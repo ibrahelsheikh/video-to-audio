@@ -86,7 +86,6 @@ if __name__ == "__main__":
     ex = App()
     sys.exit(app.exec())
 
-# TODO find good icon for app
 # TODO : change the icon of the window
 # TODO : center the window by using windows api
 
