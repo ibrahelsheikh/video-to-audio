@@ -2,7 +2,7 @@
 
 import sys
 
-from PyQt6.QtGui import QPixmap, QFont
+from PyQt6.QtGui import QPixmap, QFont, QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLineEdit, QLabel
 
 global progress_show
@@ -24,6 +24,9 @@ class App(QWidget):
 
         # fixed size
         self.setFixedSize(610, 375)
+
+        # set app icon
+        self.setWindowIcon(QIcon('icons\icon.png'))
 
         # line
         self.line = QLineEdit(self)
@@ -83,6 +86,7 @@ class App(QWidget):
 # call app
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+
     ex = App()
     sys.exit(app.exec())
 
