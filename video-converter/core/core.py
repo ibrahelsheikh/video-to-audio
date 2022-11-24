@@ -9,7 +9,7 @@ import shutil
 
 
 # convert video to .wav file by using ffmpeg
-class videoconverter:
+class main:
 
     def __init__(self):
         pass
@@ -92,15 +92,17 @@ class videoconverter:
 
         # make output directory
 
-        # copy all audio files to output directory
-        videoconverter.copytree_audio(given_path)
+        # rename dir
+        new_given_path = given_path.replace(" ", "_")
+        os.rename(given_path, new_given_path)
 
-        # if pathlib.Path(given_path).is_file() == False:
-        #     video_paths = videoconverter.get_videos_paths(given_path)
-        #     for video_path in video_paths:
-        #         videoconverter.video_to_wav(video_path)
-        #
-        # else:
-        #     videoconverter.video_to_wav(given_path)
+        if pathlib.Path(new_given_path).is_file() == False:
+            video_paths = main.get_videos_paths(new_given_path)
+            for video_path in video_paths:
+                main.video_to_wav(video_path)
+
+        else:
+            main.video_to_wav(new_given_path)
 
 
+main.convert("D:\music\وإني لأهوى _ رامي محمد.mp4")  # TODO: change this to your path

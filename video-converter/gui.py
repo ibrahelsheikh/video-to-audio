@@ -1,11 +1,18 @@
 # create simple GUI for vide converter BUILDING on QT6
 
 import sys
+from random import randint
 
+from PyQt6.QtCore import QTimer
 from PyQt6.QtGui import QPixmap, QFont, QIcon
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLineEdit, QLabel
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QFileDialog, QLineEdit, QLabel, QProgressBar, \
+    QVBoxLayout
 
-global progress_show
+StyleSheet = '''
+#RedProgressBar {
+    text-align: center;
+}
+'''
 
 
 class App(QWidget):
@@ -58,8 +65,14 @@ class App(QWidget):
 
         self.show()
 
-    # create convert function
+        # create progress bar
+        layout = QVBoxLayout(self)
+        layout.move = (25, 50)
+        layout.addWidget(
+            ProgressBar(self, minimum=0, maximum=100, objectName="RedProgressBar"))
 
+
+    # create convert function
     def convert(self):
         pass
 
@@ -81,6 +94,25 @@ class App(QWidget):
     def center(self):  # TODO: center window
 
         pass
+
+
+# Progress bar class
+class ProgressBar(QProgressBar):
+
+    def __init__(self, *args, **kwargs):
+        super(ProgressBar, self).__init__(*args, **kwargs)
+        self.setValue(0)
+        if self.minimum() != self.maximum():
+            self.timer = QTimer(self, timeout=self.onTimeout)
+            self.timer.start(randint(1, 3) * 1000)
+
+    def onTimeout(self):
+        if self.value() >= 100:
+            self.timer.stop()
+            self.timer.deleteLater()
+            del self.timer
+            return
+        self.setValue(self.value() + 1)
 
 
 # call app
