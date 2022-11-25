@@ -121,16 +121,3 @@ if __name__ == "__main__":
 
     ex = App()
     sys.exit(app.exec())
-
-# TODO : change the icon of the window
-# TODO : center the window by using windows api
-
-# TODO : add a label to show all process
-
-
-# TODO : build function to get path from textbox
-
-# TODO : run all project by cmd
-# TODO : add a label to show all process
-
-# TODO : clear textbox

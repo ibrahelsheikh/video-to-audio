@@ -50,21 +50,21 @@ class main:
         dir_path = os.path.dirname(video_path)
 
         # audio path
-        audio_path = dir_path + "\\" + file_name + ".wav"
+        output_path = dir_path + "\\" + file_name + ".wav"
 
         # check if video exists
         if os.path.exists(video_path):
 
             # check if audio file exists
-            if os.path.exists(audio_path) == False:
+            if os.path.exists(output_path) == False:
                 print("video found")
                 # convert video to .wav file
 
-                audio_path = os.path.join(dir_path, file_name + ".wav")
-                print(audio_path)
+                output_path = os.path.join(dir_path, file_name + ".wav")
+                print(output_path)
 
                 os.system(
-                    f"\"ffmpeg -i {video_path}  {dir_path}/{file_name}.wav \"")  # TODO: you can use ffmpeg or moviepy
+                    f"ffmpeg -i {video_path}  {output_path}{file_name}.wav")  # TODO: you can use ffmpeg or moviepy
                 print("Done")
             else:
                 print("audio file already exists")
@@ -75,11 +75,11 @@ class main:
     # Convert all videos in given directory to .wav files
     def convert(given_path):
 
-        # make output directory
-
         # rename dir
         new_given_path = given_path.replace(" ", "_")
+        if given_path != new_given_path:
         os.rename(given_path, new_given_path)
+        print (new_given_path)
 
         if pathlib.Path(new_given_path).is_file() == False:
             video_paths = main.get_videos_paths(new_given_path)
@@ -90,4 +90,4 @@ class main:
             main.video_to_wav(new_given_path)
 
 
-main.convert("D:\music\وإني لأهوى _ رامي محمد.mp4")  # TODO: change this to your path
+main.convert("D:\\music")  # TODO: change this to your path
